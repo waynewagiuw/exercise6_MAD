@@ -1,25 +1,13 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import{
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity
-} from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer} from '@react-navigation/native';
 import Router from './router';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { createStackNavigator } from '@react-navigation/stack';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <NavigationContainer>
-      <Router/>
+      <Router />
     </NavigationContainer>
   );
 };
-
 
 export default App;

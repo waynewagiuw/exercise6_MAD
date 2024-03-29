@@ -1,46 +1,34 @@
-import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
-import React, { useEffect } from 'react';
-import Money from '../../assets/Vectorjpg.png'
-import { useNavigation } from '@react-navigation/native';
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import Logo from '../../assets/icon/Logo.svg';
 
-const Splash = () => {
-  const navigation = useNavigation()
-
+const SplashScreen = ({navigation}) => {
   useEffect(() => {
-    const delay = setTimeout(() =>{
-      navigation.navigate("SignIn")
-    }, 3000)
-    return()=>clearTimeout(delay)
-  },[navigation])
+    setTimeout(() => {
+      navigation.replace('SignIn');
+    }, 3000);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={Money}  />
+      <Logo />
       <Text style={styles.text}>Money Tracker</Text>
     </View>
   );
 };
 
-const { height, width } = Dimensions.get('window');
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#02CF8E',
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00fa9a',
-  },
-  image:{
-    width:140,
-    height:140,
-    marginTop: 50,
+    justifyContent: 'center',
   },
   text: {
-    fontFamily: 'Poppins-Medium', 
-    fontSize: 40,
-    alignSelf: 'center',
-    color: 'black',
-    marginBottom:30
+    fontSize: 32,
+    color:'black',
+    fontFamily: 'Poppins-Medium',
   },
 });
-
-export default Splash;

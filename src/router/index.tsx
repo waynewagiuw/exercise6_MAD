@@ -13,6 +13,8 @@ export default function Router() {
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Stack.Screen name="CashOnHand" component={CashOnHand} options={{ headerShown: false }} />
       <Stack.Screen name="CashOnBank" component={CashOnBank} options={{ headerShown: false }} />
+
+
     </Stack.Navigator>
   );
 }
